@@ -1,0 +1,76 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+%common set symbols 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P}({#1})}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\newcommand{\divides}{\mid}
+
+
+\newcommand{\st}{\text{ such that }}
+\newcommand{\pmi}{\text{ principle of mathematical induction }}
+
+\newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
+{
+	\setcounter{enumi}{#1}
+	\addtocounter{enumi}{-1}
+	\item
+}
+
+\title{MATH 405: Assignment 2}
+\author{Micah Sherry}
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		\item Let $m$ and $n$ be positive integers. Prove that if $m\divides n$ and $n\divides m$ then $m=n$.
+		\begin{proof}
+			Assume $m\divides n$ and $n\divides m$. 
+			Since $m\divides n$, $n = m(x_1)$ for some $x_1 \in \Z$ and since $n\divides m$, $m = n(x_2)$ for some $x_2 \in \Z$. 
+			Therefore,
+			\begin{align*}
+				n &= m(x_1)\\
+				  &= n(x_2x_1) & \text{(by substitution)}		  
+			\end{align*}
+			So, $(x_2x_1) = 1$, and because n and m are both positive $x_1=x_2=1$. This implies n=m, which is what we wanted to show. 
+		\end{proof}
+		\item let $m, n \in \Z$ if $n\divides m$ then $m\Z \subseteq n\Z.$  
+		\begin{enumerate}
+			\item Example: $n=2$ and $m=4$\\
+				Note $2 \divides 4$.
+				Let $x \in 4\Z$ then $x = 4a$ for some $a \in \Z$. $x=2(2a)$ therefore $x \in 2\Z$ 
+			\item prove the statement. 
+			\begin{proof}
+				Let $n,m \in \Z$ and assume $n \divides m$. 
+				Since $n \divides m$, $m = n(a)$ for some $a \in \Z$. Let $x \in m\Z$ so, $x =m(b)$ for some $b \in \Z$.
+				So, 
+				\begin{align*}
+				 x &= m(b) \\
+				   &= n(a)(b) &\text{(by substitution)}\\
+				   &= n(ab)
+				\end{align*}
+				Since $ab$ is an integer (because $\Z$ is closed under multiplication) $x$ is an element of $n\Z$. Therefore the subset relationship holds, which is what we wanted to show.   
+			\end{proof}				
+		\end{enumerate}
+		\item 
+	\end{enumerate}
+\end{document}
