@@ -21,11 +21,11 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\nullset}{\varnothing}
-\newcommand{\powerset}[1]{\mathcal{P}({#1})}
+\newcommand{\powerset}[1]{\mathcal{P} ({#1})}
 \newcommand{\ol}[1]{\overline{#1}}
 
 \newcommand{\divides}{\mid}
-
+\newcommand{\notdivides}{\nmid}
 
 \newcommand{\st}{\text{ such that }}
 \newcommand{\pmi}{\text{ principle of mathematical induction }}
@@ -53,7 +53,7 @@
 			\end{align*}
 			So, $(x_2x_1) = 1$, and because n and m are both positive $x_1=x_2=1$. This implies n=m, which is what we wanted to show. 
 		\end{proof}
-		\item let $m, n \in \Z$ if $n\divides m$ then $m\Z \subseteq n\Z.$  
+			\item let $m, n \in \Z$ if $n\divides m$ then $m\Z \subseteq n\Z$.
 		\begin{enumerate}
 			\item Example: $n=2$ and $m=4$\\
 				Note $2 \divides 4$.
@@ -71,6 +71,36 @@
 				Since $ab$ is an integer (because $\Z$ is closed under multiplication) $x$ is an element of $n\Z$. Therefore the subset relationship holds, which is what we wanted to show.   
 			\end{proof}				
 		\end{enumerate}
-		\item 
+		
+		\item Prove the converse of the statement above. That is Prove: 
+		Let $m,n \in \Z$. If $m\Z \subseteq n\Z$, then $n \divides m$.    
+		\begin{proof}
+			The proof will be by contradiction.\\
+			Assume that $m\Z \subseteq n\Z$ and $n \notdivides m$.
+			Notice $m \in m\Z$ (because $m = m(1)$). This means that m has to be an element of $n\Z$ (otherwise it would not be a subset).
+			Therefore $m = z(a)$ for some $a \in \Z$ contradicting the assumtion. Therefore the original statement is true.
+		\end{proof}
+		\item for each pair of integers $a$ and $b$ determine whether or not $ax+by=1$ has an integer solution. If it does then find atleast 3 different integer solutions $(x,y)$ if it doesn't then explain why not
+		\begin{enumerate}
+			\item $a=7, b= 10$\\
+				Integer solutions $(x,y): (-7, 5 ),\ (3, -2 ),\ (13, -9)$
+
+			\item $a=8, b= 10$\\
+				\begin{align*}
+					ax+by &= 8x+10y\\
+						  &= 2(4x+5y) 
+				\end{align*}
+				Which implies that all (integer) linear combos of a and b must be even. Therefore there is no integer solutions. 
+			\item $a=15, b= 21$ 
+			\begin{align*}
+				ax+by &= 15x + 21y\\
+					  &= 3(5x+7y)
+			\end{align*}
+			Which implies that all (integer) linear combos of a and b must be a multiple of 3. Therefore there is no integer solutions.
+			\item $a=15, b= 16$ \\
+			Integer solutions $(x,y): (-1,1), \  (15, -14), \ (-17, 16)$
+		\end{enumerate}
+
+
 	\end{enumerate}
 \end{document}
