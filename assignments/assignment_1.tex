@@ -78,9 +78,9 @@
 			The proof will be by contradiction.\\
 			Assume that $m\Z \subseteq n\Z$ and $n \notdivides m$.
 			Notice $m \in m\Z$ (because $m = m(1)$). This means that m has to be an element of $n\Z$ (otherwise it would not be a subset).
-			Therefore $m = z(a)$ for some $a \in \Z$ contradicting the assumtion. Therefore the original statement is true.
+			Therefore $m = n(a)$ for some $a \in \Z$ contradicting the assumption. Therefore the original statement is true.
 		\end{proof}
-		\item for each pair of integers $a$ and $b$ determine whether or not $ax+by=1$ has an integer solution. If it does then find atleast 3 different integer solutions $(x,y)$ if it doesn't then explain why not
+		\item For each pair of integers $a$ and $b$ determine whether or not $ax+by=1$ has an integer solution. If it does then find at least 3 different integer solutions $(x,y)$ if it doesn't then explain why not
 		\begin{enumerate}
 			\item $a=7, b= 10$\\
 				Integer solutions $(x,y): (-7, 5 ),\ (3, -2 ),\ (13, -9)$
@@ -100,7 +100,36 @@
 			\item $a=15, b= 16$ \\
 			Integer solutions $(x,y): (-1,1), \  (15, -14), \ (-17, 16)$
 		\end{enumerate}
-
-
+		\item Let $a$ and $b$ be consecutive odd integers. show that the $gcd(a,b)=1$.
+		\begin{proof}
+			Since $a$ and $b$ are odd integers $a = 2k +1$ and $b = 2k+3$ for some $k \in \Z$. Let $d = gcd(a,b)$. 
+			Therefore $a = dn$ for some $n \in \Z$ and similarly $b = dm$ for some $m \in \Z$. So,
+			\begin{align*}
+					b - a &= dm-dn\\
+					b - a &= d(m-n) \\
+			(2k+3)-(2k+1) &= d(m-n)\\
+			            2 &= d(m-n)
+			\end{align*}
+			Therefor $d \divides 2$ and since a and b are odd $d \not=2$. So, $d = 1$.
+		\end{proof}
 	\end{enumerate}
+	
+	\textbf{Extra Credit:}
+		prove that $3, 5, 7$ is the only prime triple.
+		\begin{proof}
+			Let $n\in \Z$ and $n > 3$. Notice that if $n \equiv_3 0 $ it is a multiple of 3, therefore it is not prime.
+			\begin{enumerate}[label= Case \arabic*:]
+				\item n is even. This is trivial if n is even then it is not prime and therefore not in a prime triple
+				\item n is odd. \\  
+				Consider the three consecutive odd integers $n, n+2 n+4$. Notice there are three sub-cases for n: $n \equiv_3 0$, $n \equiv_3 1$, $n \equiv_3 2$
+				\begin{enumerate}[label= Subcase \arabic*:]
+				\item $n \equiv_3 0$. Therefore n is not prime so it is not part of a prime triple.
+				\item $n \equiv_3 1$. which implies $n+2 \equiv_3 0$ Therefore $n+2$ is not prime so it is not part of a prime triple.
+				\item $n \equiv_3 2$. which implies $n+4 \equiv_3 0$ Therefore $n+4$ is not prime so it is not part of a prime triple.
+				\end{enumerate}	
+			\end{enumerate}
+			Therefore since in all cases for $n$, $n+2$ and $n+4$ is not a prime triple 3, 5 ,7 is the only prime triple.
+			
+		\end{proof}
+			
 \end{document}
