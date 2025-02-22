@@ -1,0 +1,171 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+%common set symbols 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P} ({#1})}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+
+\newcommand{\st}{\text{ such that }}
+\newcommand{\pmi}{\text{ principle of mathematical induction }}
+
+\newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
+{
+	\setcounter{enumi}{#1}
+	\addtocounter{enumi}{-1}
+	\item
+}
+\usepackage{multicol}
+
+\title{MATH 405: Exam 1 }
+\author{Micah Sherry}
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+	\item Compute
+	\begin{enumerate}
+		\item $5^{36}$ in $\Z_{11}$
+		$$
+			5^{36} \equiv (5^2)^{18} \equiv (3)^{18} \equiv 9(9)^8 \equiv 9(4)^4 \equiv 9(5)^2 \equiv 9(3) \equiv 5 \text{ (mod 11)} 
+		$$
+		\item $5^{-3}$ in $\Z_{11}$ \\
+		since the $gcd(5,11) = 1$, $5^{-1}$ exist in $\Z_{11}$.
+		Notice, $11-2*5 =1$. Therefore $5^{-1}\equiv-2\text{ (mod 11)} $\\
+		$$5^{-3} \equiv (-2)^3 \equiv -8\equiv 3 \text{ (mod 11)}$$
+	\end{enumerate}
+	\item Given the integers $a, b$ below find gcd(a, b) using the Euclidean Algorithm and also find integers $x, y$ such that $gcd(a,b) = ax + by$
+	\begin{enumerate}
+		\item $ a = 3185$ and $b = 2873$
+		\begin{alignat*}{5}
+			3185 &= 1(2873) \ &+\ &312 \\
+			2873 &= 9(312)  \ &+\ &65  \\
+			312  &= 4(65)   \ &+\ &52  \\
+			65   &= 1(52)   \ &+\ &13  \\
+			52   &= 4(13)   \ &+\ &0   
+		\end{alignat*}
+		Therefore $gcd(a,b)=13$.
+		
+		\begin{alignat*}{5}
+			13 &= (65)   \ &-\ &(52) \\
+			13 &= (65)   \ &-\ &(312 -4(65)) \\
+			13 &= -(312)  \ &+\ &5(65) \\
+			13 &= -(312)  \ &+\ &5(2873-9(312)) \\
+			13 &= 5(2873) \ &-\ &46(312) \\
+			13 &= 5(2873) \ &-\ &46(3185-2873) \\
+			13 &= -46(3185)\ &+\ & 51(2873)
+		\end{alignat*}
+		Therefore $x= -46$ and $y =51$ is a solution to  $gcd(a,b) = ax + by$
+		
+		 \item $ a = 360$ and $b = 343$
+		\begin{alignat*}{5}
+			360 &= 1(343) \ &+\ &17\\
+			343 &= 20(17) \ &+\ &3\\
+			 17 &= 5(3)   \ &+\ &2\\
+			  3 &= 1(2)   \ &+\ &1
+		\end{alignat*}
+		Therefore $gcd(a,b)=1$.
+		
+		\begin{alignat*}{5}
+			1 &= (3)   \ &-\ &(2) \\
+			1 &= (3)   \ &-\ &(17-5(3)) \\
+			1 &= -(17) \ &+\ &6(3) \\
+			1 &= -(17) \ &+\ &6(343-20(17)) \\
+			1 &= 6(343)\ &-\ &121(17) \\
+			1 &= 6(343)\ &-\ &121(360-343) \\
+			1 &= -121(360)\ &+\ &127(343) \\
+		\end{alignat*}
+		Therefore $x= -121$ and $y =127$ is a solution to  $gcd(a,b) = ax + by$
+	\end{enumerate}
+	 
+	\item Let $n$ be any integer. Prove that one of the three integers $n$, $n + 2$, or $n + 4$ must be a multiple of 3. 
+	\begin{proof}
+		assume n is an integer. Notice there are three cases for n.
+		\begin{enumerate}[label=Case \arabic*:]
+			\item $n\equiv 0 \text{ (mod 3)}.$
+				In this case $n$ is a multiple of 3.
+			
+			\item $n\equiv 1 \text{ (mod 3)}.$
+				In this case $n+2$ is a multiple of 3.
+			
+			\item $n\equiv 2 \text{ (mod 3)}.$
+				In this case $n+4$ is a multiple of 3.
+		\end{enumerate}
+		Therefore the statement is true.
+	\end{proof}
+			
+	\item Define a relationship $\triangleleft$ for points in $\R^2$ as follows.For $(x, y), (x_1 , y_1) \in \R^2$,
+	$(x, y) \triangleleft (x1 , y1)$ if and only if $|x| = |x_1|$ and $|y| = |y_1|$.
+	\begin{enumerate}
+		\item Prove or disprove that the relationship $\triangleleft$ is reflexive
+		\begin{proof}
+			Let $(x,y) \in \R^2$. 
+			Since $x=x$ and $y=y$, the relation $\triangleleft$ is reflexive
+		\end{proof}
+		
+		\item Prove or disprove that the relationship $\triangleleft$ is symmetric 
+		\begin{proof}
+			let $(x_0,y_0), (x_1,y_1) \in \R^2$ with $(x_0,y_0) \triangleleft (x_1,y_1)$.\\
+			So, $|x_0| = |x_1|$ and $|y_0| = |y_1|$. Since equality is symmetric $|x_1| = |x_0|$ and $|y_1| = |y_0|$.
+			Therefore $(x_1,y_1) \triangleleft (x_0,y_0)$, So $\triangleleft$ is symmetric. 
+			
+		\end{proof}
+		
+		\item Prove or disprove that the relationship $\triangleleft$ transitive
+		\begin{proof}
+			Let $(x_0,y_0), (x_1,y_1), (x_2,y_2) \in \R^2$, with $(x_0,y_0) \triangleleft (x_1, y_1)$ and $(x_1, y_1) \triangleleft (x_2,y_2)$.\\
+			  $(x_0,y_0) \triangleleft (x_1, y_1)$, implies $|x_0| = |x_1|$ and $|y_0| = |y_1|$.\\
+			 Similarly, $(x_1,y_1) \triangleleft (x_2, y_2)$, implies $|x_1| = |x_2|$ and $|y_1| = |y_2|$.\\
+			 Therefore, $|x_0| = |x_2|$ and $|y_0|= |y_2|$ and $(x_0, y_0) \triangleleft (x_2,y_2)$. 
+			 Thus, the relation $\triangleleft$ is transitive.    
+		\end{proof}
+	\end{enumerate}
+	\item Let $a, b, k$ be integers. If $a|k$ and $b|k$ and $gcd(a, b) = 1$, then show $ab|k$. 
+	\begin{proof}
+	 	Assume $a|k$ and $b|k$ and $gcd(a, b) = 1$. 
+	 	Since, $a|k$ then $k=ak_0$, for some $k_0 \in \Z$.
+	 	Similarly, $b|k$ implies $k=bk_1$, for some $k_1 \in \Z$.\\
+	 	Since $gcd(a, b) = 1$ then there exist $x$ and $y$ such that $ax+by=1$
+	 	So,
+	 	\begin{align*}
+	 		akx+bky&=k\\
+	 		abk_1x + bak_0y &=k\\
+	 		ab(k_1x + k_0y) &=k
+	 	\end{align*}
+	 	Therefore $ab|k$.
+	\end{proof}
+	
+	\item Let p be a prime. Show that in $\Z_p$ the only solutions to $x_2 \equiv_p 1$ are $1$ and $p - 1$.
+	\begin{proof}
+		Consider, the following concurrences 
+		\begin{align*}
+			x^2 &\equiv_p 1\\
+			x^2 -1 &\equiv_p 0     &\text{(subtracting 1 from both sides)}\\
+			(x-1)(x+1) &\equiv_p 0 &\text{(factoring)}\\
+		\end{align*} 
+		Since $p$ is prime $x-1$ or $x+1$ must be congruent to 0. This implies that $x\equiv_p 1$ or $x \equiv_p -1 \equiv_p p-1.$
+		 
+	\end{proof}
+	
+	\end{enumerate}		
+\end{document}

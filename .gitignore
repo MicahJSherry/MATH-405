@@ -1,5 +1,5 @@
-*
-!*.pdf
-!*.tex
+assignments/*
+!assignments/*.pdf
+!assignments/*.tex
 !.gitignore
 
