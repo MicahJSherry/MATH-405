@@ -1,0 +1,72 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+%common set symbols 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P} ({#1})}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+
+\newcommand{\st}{\text{ such that }}
+\newcommand{\pmi}{\text{ principle of mathematical induction }}
+
+\newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
+{
+	\setcounter{enumi}{#1}
+	\addtocounter{enumi}{-1}
+	\item
+}
+
+
+
+\title{MATH 405: Assignment 4}
+\author{Micah Sherry}
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		\item Find the smallest positive solution to the system of congruences.
+		\begin{align*}
+			x &\equiv 4 \bmod{7}\\
+			x &\equiv 5 \bmod{11}\\
+			x &\equiv 2 \bmod{16}\\
+			x &\equiv 1 \bmod{19}
+		\end{align*}
+		
+		\item Consider the set $\Z_3[i] = \{ a+bi |a,b \in \Z_3 \}$ where $i = \sqrt{-1}$.
+		\begin{enumerate}
+			\item find all the elements of $\Z_3[i]$. How many are there?
+			\item $1+2i \in \Z_3[i] $ has a multiplicative inverse in find it.
+			\item Classify each nonzero element of $\Z_3[i]$ as a unit, a zero divisor or neither. 
+		\end{enumerate}
+		
+		\item let $R$ be a ring and let $S$ and $T$ be subrings or $R$. Let $M = S \cap T$. Show that M is a subring of $R$ 
+		
+		\item Let $R$ be a ring (not necessarily commutative). \\
+		Let $a,b \in R, (a \cdot b)^{-1} = b^{-1} \cdot a^{-1}$
+		
+		
+		\textbf{Extra Credit:}
+		let R be a ring (not necessarily commutative).\\
+		If for any $a,b \in R$, $(a\cdot b)^{-1} = a^{-1} \cdot b^{-1}$ then show that R is commutative 
+	\end{enumerate}
+\end{document}
