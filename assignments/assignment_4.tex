@@ -93,8 +93,8 @@
 				     &= 4(3344)(3)+5(2128)(9)+ 2(1463)(7)+1(1232)(6)\\
 				     &= 163762\\
 				     \\
-				x_k  &= x_0 - kM  \text{(where k is some integer)}\\
-				x_6  &= 23314 \text{ is the smallest positive value for x.}				
+				x_k  &= x_0 + kM  \text{(where k is some integer)}\\
+				x_{-6}  &= 23314 \text{ is the smallest positive value for x.}				
 			\end{align*}
 		
 		
@@ -185,12 +185,12 @@
 		\item Let $R$ be a ring (not necessarily commutative). \\
 		Let $a,b \in R$, prove that $(a \cdot b)^{-1} = b^{-1} \cdot a^{-1}$
 		\begin{proof}
-			Let R be a ring and let $a,b \in R$. 
+			Let R be a ring and let $a,b \in R$. And assuming $a^{-1}, b^{-1}$ exist.   
 			Consider:
 			\begin{align*}
 				 (a \cdot b) \cdot (b^{-1} \cdot a^{-1}) &= a \cdot (b \cdot b^{-1}) \cdot a^{-1} & \text{(by associativity of R)}\\
 						 						&= a \cdot 1 \cdot a^{-1} & \text{(by definition of multiplicative inverse)}\\
-						 						&= a \cdot  a^{-1} & \text{(by associativity of R)}\\
+						 						&= a \cdot  a^{-1} & \text{(by definition of multiplicative identity)}\\
 						 						&= 1 &\text{(by definition of multiplicative inverse)}
 			\end{align*}
 			Therefore  $(b^{-1} \cdot a^{-1})$ is the multiplicative inverse of $(a\cdot b)$
@@ -201,7 +201,8 @@
 		If for any $a,b \in R$, $(a\cdot b)^{-1} = a^{-1} \cdot b^{-1}$ then show that R is commutative.
 		\begin{proof}
 		Let $a,b \in R$.
-		Assume $(a \cdot b)^{-1} =(a^{-1} \cdot b^{-1})$ and from proof of 4. we have $(a \cdot b)^{-1} = (b^{-1} \cdot a^{-1})$. 
+		Assume $a^{-1}, b^{-1}$ exist and $(a \cdot b)^{-1} =(a^{-1} \cdot b^{-1})$. from proof of problem 4 we have $(a \cdot b)^{-1} = (b^{-1} \cdot a^{-1})$. 
+		So,
 		\begin{align*}
 			(a^{-1} \cdot b^{-1}) &= (b^{-1} \cdot a^{-1})\\
 			 b^{-1} &= a \cdot (b^{-1} \cdot a^{-1})		 &\text{(left multiply by a)}\\
