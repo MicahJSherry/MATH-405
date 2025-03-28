@@ -1,0 +1,177 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+%common set symbols 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P} ({#1})}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+
+\newcommand{\st}{\text{ such that }}
+\newcommand{\pmi}{\text{ principle of mathematical induction }}
+
+\newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
+{
+	\setcounter{enumi}{#1}
+	\addtocounter{enumi}{-1}
+	\item
+}
+\usepackage{multicol}
+
+
+\title{MATH 405: Assignment 6}
+\author{Micah Sherry}
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		\item Let $R$ be an integral domain. Prove that if $a, b \in R$ and $a^2 = b^2$, then $a = b$ or $a = -b$.
+		\begin{proof}
+		
+			Let $a,b \in R$ with $a^2 = b^2$.
+			So,
+			\begin{align*}
+				a^2 	   &= b^2\\
+				a^2-b^2    &= 0\\
+				(a-b)(a+b) &= 0
+			\end{align*}  
+			Since $R$ does not have zero divisors $a-b = 0$ or $a+b = 0$. Therefore $a = b$ or $a = -b$.
+		\end{proof}
+
+
+
+		\item Let $R$ be a commutative ring (but not necessarily an integral domain). 
+		Let $f(x) \in R[x]$ prove each of the following statements. \\ 
+		To make the following proofs more concise, we'll prove this statement first:
+		if $f(x) \in R[x]$ is monic and non-constant and $0_R \not=g(x) \in R[x]$, Then $\deg(f(x)g(x))>0$.
+		\begin{proof}
+			Assume,\\$f(x) = 1_Rx^n+ a_{n-1}x^{n-1} + \ldots + a_0$ and\\
+			$g(x) = b_mx^m+b_{m-1}x^{m-1} + \ldots + b_0$ with $n>0$ and $a_i, b_i \in R$.\\
+			Consider the product of the highest terms of $f(x)g(x)$, $b_m*1_rx^{m+n}$.
+			Therefore $\deg(f(x)g(x)) = n + m >0$.
+		\end{proof}
+
+		\begin{enumerate}
+			\item If $f(x)$ is monic and non-constant, then $f(x)$ is not a unit in $R[x]$.
+			\begin{proof}
+				Assume $f(x)$ is monic and non-constant.
+				And assume for the sake of contradiction there exist a $g(x)$ such that $f(x)g(x) = 1_R$. 
+				From the above result $\deg(f(x)g(x))>0$, contradicting the assumption that $f(x)g(x) = 1_R$ 
+				there for $f(x)$ is not a unit
+			\end{proof} 
+
+			\item If $f(x)$ is monic, then $f(x)$ is not a zero divisor in $R[x]$
+			\begin{proof}
+				assume f(x) is monic.
+				\begin{enumerate}[label=Case \arabic*:]
+				\item $f(x)$ is monic and constant. $f(x)= 1_R$. Which is not a zero divisor.
+				\item f(x) is monic and non-constant.
+				Assume for the sake of contradiction that there exists $g(x) \not= 0_R$ such that $f(x)g(x)=0$. 
+				From the above result the $\deg(f(x)g(x))>0$ which is contradicting the assumption that $f(x)g(x)=0$.
+				thus $f(x)$ is not a zero divisor.
+				\end{enumerate}
+				Therefore the original statement holds. 
+			\end{proof}
+		\end{enumerate}
+
+		\item units in $\Z_4[x]$ 
+		\begin{enumerate}
+			\item Find five units (other than 1 and 3) in $\Z_4[x]$ 
+				\begin{itemize}
+					\item $  2x+1$; $(2x  +1)^2 = 4x^2  +4x   +1 = 1$
+					\item $2x^2+1$; $(2x^2+1)^2 = 4x^4  +4x^2 +1 = 1$
+					\item $2x^3+1$; $(2x^3+1)^2 = 4x^6  +4x^3 +1 = 1$
+					\item $2x^4+1$; $(2x^4+1)^2 = 4x^8  +4x^4 +1 = 1$
+					\item $2x^5+1$; $(2x^5+1)^2 = 4x^10 +4x^5 +1 = 1$
+				\end{itemize}
+			\item Explain why $\Z_4[x]$ has infinitely many units.\\
+			consider all polynomials of the form $(2g(x)+1)$, with $g(x) \in Z_4[x]$.
+			Notice that $(2g(x)+1)^2 = 4g(x)^2 +4g(x)+1 = 1$. Therefore, are infinitely many units of the form $(2g(x)+1)$.   
+				
+		\end{enumerate}
+
+		\item Consider the function $\theta: \Z_2[x] \to \Z_2[x]$ 
+		where $\theta(f(x)) = (f(x))^2$ for any $f(x) \in  \Z_2[x]$.
+		\begin{enumerate}
+		\item show that $\theta$ is a homomorphism.
+		\begin{proof}
+		Let $f(x),\ g(x) \in \Z_2[x]$
+		Consider, 
+		\begin{align*}
+			\theta(f(x)g(x))&= (f(x) g(x))^2\\
+							&= f(x)^2g(x)^2\\
+							&= \theta(f(x))\theta(g(x)).
+		\end{align*}
+		Now, consider 
+		\begin{align*}
+			\theta(f(x)+g(x)) &= (f(x)+g(x))^2\\ 
+							&= f(x)^2 + 2f(x)g(x) +g(x)^2 \\
+							&= f(x)^2+g(x)^2\\
+							&= \theta(f(x))+\theta(g(x))
+		\end{align*}
+		Therefore $\theta$ is a homomorphism.
+		\end{proof}
+		\item find $\ker\theta$\\
+		$\ker\theta= \{f(x)\in \Z_2[x]| f(x)^2 = 0\}= \{0\}$
+
+		\item Describe all elements in the image of $\theta$\\ 
+		All polynomials in $\Z_2[x]$ with only even powers of x
+		
+	\end{enumerate}
+	\item Let $A$ be the set of all polynomials in $\Z[x]$ with an even constant term.
+	\begin{enumerate}
+		\item prove that $A$ is an ideal $\Z[x]$
+		\begin{proof}
+			let $A = \{ xg(x)+2n|g(x)\in \Z[x] \wedge n \in \Z \}$\\
+			let $f_1(x) = xg_1(x)+2n_1$ and $f_2(x) = xg_2(x)+2n_2$, 
+			for some $g_1(x), g_2(x) \in \Z[x]$, $n_1, n_2 \in \Z$. 
+			
+			Consider,
+			\begin{align*}
+				f_1(x)+f_2(x) &= xg_1(x)+2n_1+xg_2(x)+2n_2 \\
+							&= x(g_1(x)+g_2(x))+2(n_1+n_2)
+			\end{align*}
+
+			So, $A$ is an closed under addition.
+			
+			let $t(x) = xg(x)+ n$ for some  $g(x) \in \Z[x]$ and $n \in \Z$.
+			Now Consider, 
+			\begin{align*}
+				t(x)f_1(x)  &= (xg(x)+ n)(xg_1(x)+2n_1) \\
+							&=x(xg(x)g_1(x)+2n_1g(x)+ng_1(x))+ 2n_1n
+			\end{align*}
+			This show that A satisfies the absorption property and closure under multiplication.
+			Therefore A is an ideal.
+		\end{proof}
+		\item Anita claims $A = \langle2\rangle =\{ 2*f(x)| f(x) \in Z[x] \}$. Do you agree or
+		disagree? Explain.\\
+		disagree, $x+2 \in A$ and $x+2 \not\in \langle2\rangle$
+
+		\item Elizabeth claims $A = \langle x \rangle =\{ x*f(x)| f(x) \in Z[x] \}$. Do you agree or
+		disagree? Explain.\\
+		disagree, $2 \in A$ and $2 \not\in \langle x \rangle$ 
+	\end{enumerate}
+
+
+
+	\end{enumerate}
+\end{document}
