@@ -3,7 +3,7 @@
 
 \usepackage[english]{babel}
 \usepackage{listings}
-\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.5cm]{geometry}
 
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{bbold}
@@ -51,10 +51,10 @@
 			So,
 			\begin{align*}
 				a^2 	   &= b^2\\
-				a^2-b^2    &= 0\\
-				(a-b)(a+b) &= 0
+				a^2-b^2    &= 0_R\\
+				(a-b)(a+b) &= 0_R
 			\end{align*}  
-			Since $R$ does not have zero divisors $a-b = 0$ or $a+b = 0$. Therefore $a = b$ or $a = -b$.
+			Since $R$ does not have zero divisors $a-b = 0_R$ or $a+b = 0_R$. Therefore $a = b$ or $a = -b$.
 		\end{proof}
 
 
@@ -65,9 +65,9 @@
 		if $f(x) \in R[x]$ is monic and non-constant and $0_R \not=g(x) \in R[x]$, Then $\deg(f(x)g(x))>0$.
 		\begin{proof}
 			Assume,\\$f(x) = 1_Rx^n+ a_{n-1}x^{n-1} + \ldots + a_0$ and\\
-			$g(x) = b_mx^m+b_{m-1}x^{m-1} + \ldots + b_0$ with $n>0$ and $a_i, b_i \in R$.\\
-			Consider the product of the highest terms of $f(x)g(x)$, $b_m*1_rx^{m+n}$.
-			Therefore $\deg(f(x)g(x)) = n + m >0$.
+			$g(x) = b_mx^m+b_{m-1}x^{m-1} + \ldots + b_0$ with $n>0$, $m \geq 0$, and $a_i, b_i \in R$.\\
+			Consider the product of the highest terms of $f(x)g(x)$, $b_m*1_Rx^{m+n}$.
+		Since $1_R$ is not a zero divisor $\deg(f(x)g(x)) = n + m >0$.
 		\end{proof}
 
 		\begin{enumerate}
@@ -76,7 +76,7 @@
 				Assume $f(x)$ is monic and non-constant.
 				And assume for the sake of contradiction there exist a $g(x)$ such that $f(x)g(x) = 1_R$. 
 				From the above result $\deg(f(x)g(x))>0$, contradicting the assumption that $f(x)g(x) = 1_R$ 
-				there for $f(x)$ is not a unit
+				therefore $f(x)$ is not a unit
 			\end{proof} 
 
 			\item If $f(x)$ is monic, then $f(x)$ is not a zero divisor in $R[x]$
@@ -85,8 +85,8 @@
 				\begin{enumerate}[label=Case \arabic*:]
 				\item $f(x)$ is monic and constant. $f(x)= 1_R$. Which is not a zero divisor.
 				\item f(x) is monic and non-constant.
-				Assume for the sake of contradiction that there exists $g(x) \not= 0_R$ such that $f(x)g(x)=0$. 
-				From the above result the $\deg(f(x)g(x))>0$ which is contradicting the assumption that $f(x)g(x)=0$.
+				Assume for the sake of contradiction that there exists $g(x) \not= 0_R$ such that $f(x)g(x)=0_R$. 
+				From the above result the $\deg(f(x)g(x))>0$ which is contradicting the assumption that $f(x)g(x)=0_R$.
 				thus $f(x)$ is not a zero divisor.
 				\end{enumerate}
 				Therefore the original statement holds. 
@@ -101,10 +101,10 @@
 					\item $2x^2+1$; $(2x^2+1)^2 = 4x^4  +4x^2 +1 = 1$
 					\item $2x^3+1$; $(2x^3+1)^2 = 4x^6  +4x^3 +1 = 1$
 					\item $2x^4+1$; $(2x^4+1)^2 = 4x^8  +4x^4 +1 = 1$
-					\item $2x^5+1$; $(2x^5+1)^2 = 4x^10 +4x^5 +1 = 1$
+					\item $2x^5+1$; $(2x^5+1)^2 = 4x^{10} +4x^5 +1 = 1$
 				\end{itemize}
 			\item Explain why $\Z_4[x]$ has infinitely many units.\\
-			consider all polynomials of the form $(2g(x)+1)$, with $g(x) \in Z_4[x]$.
+			Consider all polynomials of the form $(2g(x)+1)$, with $g(x) \in Z_4[x]$.
 			Notice that $(2g(x)+1)^2 = 4g(x)^2 +4g(x)+1 = 1$. Therefore, are infinitely many units of the form $(2g(x)+1)$.   
 				
 		\end{enumerate}
@@ -121,6 +121,7 @@
 							&= f(x)^2g(x)^2\\
 							&= \theta(f(x))\theta(g(x)).
 		\end{align*}
+		Therefore $\theta$ preserves multiplication.
 		Now, consider 
 		\begin{align*}
 			\theta(f(x)+g(x)) &= (f(x)+g(x))^2\\ 
@@ -128,13 +129,15 @@
 							&= f(x)^2+g(x)^2\\
 							&= \theta(f(x))+\theta(g(x))
 		\end{align*}
-		Therefore $\theta$ is a homomorphism.
+		Therefore $\theta$ preserves addition. 
+		Thus $\theta$ is a homomorphism.
 		\end{proof}
 		\item find $\ker\theta$\\
 		$\ker\theta= \{f(x)\in \Z_2[x]| f(x)^2 = 0\}= \{0\}$
 
 		\item Describe all elements in the image of $\theta$\\ 
-		All polynomials in $\Z_2[x]$ with only even powers of x
+		Notice $\theta$ maps each term of the polynomial to its Square.
+		So the image of $\theta$ is all polynomials in $\Z_2[x]$ with only even powers of x
 		
 	\end{enumerate}
 	\item Let $A$ be the set of all polynomials in $\Z[x]$ with an even constant term.
@@ -164,11 +167,11 @@
 		\end{proof}
 		\item Anita claims $A = \langle2\rangle =\{ 2*f(x)| f(x) \in Z[x] \}$. Do you agree or
 		disagree? Explain.\\
-		disagree, $x+2 \in A$ and $x+2 \not\in \langle2\rangle$
+		Disagree, notice $x+2 \in A$ and $x+2 \not\in \langle2\rangle$
 
 		\item Elizabeth claims $A = \langle x \rangle =\{ x*f(x)| f(x) \in Z[x] \}$. Do you agree or
 		disagree? Explain.\\
-		disagree, $2 \in A$ and $2 \not\in \langle x \rangle$ 
+		Disagree, notice $2 \in A$ and $2 \not\in \langle x \rangle$ 
 	\end{enumerate}
 
 

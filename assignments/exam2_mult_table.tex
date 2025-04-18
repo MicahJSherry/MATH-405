@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[letterpaper, landscape, top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{caption}
+\captionsetup{font=large}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}  
+    \renewcommand*{\arraystretch}{1.5}
+    \begin{table}[h!] 
+
+        \centering 
+        \caption*{Multiplication table for $\Z_4[x]/ \langle x^2 \rangle$ }
+        \begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 
+            \hline 
+            $\cdot$ &$\overline{0+ 0x}$ &$\overline{1+ 0x}$ &$\overline{2+ 0x}$ &$\overline{3+ 0x}$ &$\overline{0+ 1x}$ &$\overline{1+ 1x}$ &$\overline{2+ 1x}$ &$\overline{3+ 1x}$ &$\overline{0+ 2x}$ &$\overline{1+ 2x}$ &$\overline{2+ 2x}$ &$\overline{3+ 2x}$ &$\overline{0+ 3x}$ &$\overline{1+ 3x}$ &$\overline{2+ 3x}$ &$\overline{3+ 3x}$ \\ \hline \hline 
+            $\overline{0+ 0x}$ &$\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ & $\overline{0+ 0x}$ \\ \hline 
+            $\overline{1+ 0x}$ &$\overline{0+ 0x}$ & $\overline{1+ 0x}$ & $\overline{2+ 0x}$ & $\overline{3+ 0x}$ & $\overline{0+ 1x}$ & $\overline{1+ 1x}$ & $\overline{2+ 1x}$ & $\overline{3+ 1x}$ & $\overline{0+ 2x}$ & $\overline{1+ 2x}$ & $\overline{2+ 2x}$ & $\overline{3+ 2x}$ & $\overline{0+ 3x}$ & $\overline{1+ 3x}$ & $\overline{2+ 3x}$ & $\overline{3+ 3x}$ \\ \hline 
+            $\overline{2+ 0x}$ &$\overline{0+ 0x}$ & $\overline{2+ 0x}$ & $\overline{0+ 0x}$ & $\overline{2+ 0x}$ & $\overline{0+ 2x}$ & $\overline{2+ 2x}$ & $\overline{0+ 2x}$ & $\overline{2+ 2x}$ & $\overline{0+ 0x}$ & $\overline{2+ 0x}$ & $\overline{0+ 0x}$ & $\overline{2+ 0x}$ & $\overline{0+ 2x}$ & $\overline{2+ 2x}$ & $\overline{0+ 2x}$ & $\overline{2+ 2x}$ \\ \hline 
+            $\overline{3+ 0x}$ &$\overline{0+ 0x}$ & $\overline{3+ 0x}$ & $\overline{2+ 0x}$ & $\overline{1+ 0x}$ & $\overline{0+ 3x}$ & $\overline{3+ 3x}$ & $\overline{2+ 3x}$ & $\overline{1+ 3x}$ & $\overline{0+ 2x}$ & $\overline{3+ 2x}$ & $\overline{2+ 2x}$ & $\overline{1+ 2x}$ & $\overline{0+ 1x}$ & $\overline{3+ 1x}$ & $\overline{2+ 1x}$ & $\overline{1+ 1x}$ \\ \hline 
+            $\overline{0+ 1x}$ &$\overline{0+ 0x}$ & $\overline{0+ 1x}$ & $\overline{0+ 2x}$ & $\overline{0+ 3x}$ & $\overline{0+ 0x}$ & $\overline{0+ 1x}$ & $\overline{0+ 2x}$ & $\overline{0+ 3x}$ & $\overline{0+ 0x}$ & $\overline{0+ 1x}$ & $\overline{0+ 2x}$ & $\overline{0+ 3x}$ & $\overline{0+ 0x}$ & $\overline{0+ 1x}$ & $\overline{0+ 2x}$ & $\overline{0+ 3x}$ \\ \hline 
+            $\overline{1+ 1x}$ &$\overline{0+ 0x}$ & $\overline{1+ 1x}$ & $\overline{2+ 2x}$ & $\overline{3+ 3x}$ & $\overline{0+ 1x}$ & $\overline{1+ 2x}$ & $\overline{2+ 3x}$ & $\overline{3+ 0x}$ & $\overline{0+ 2x}$ & $\overline{1+ 3x}$ & $\overline{2+ 0x}$ & $\overline{3+ 1x}$ & $\overline{0+ 3x}$ & $\overline{1+ 0x}$ & $\overline{2+ 1x}$ & $\overline{3+ 2x}$ \\ \hline 
+            $\overline{2+ 1x}$ &$\overline{0+ 0x}$ & $\overline{2+ 1x}$ & $\overline{0+ 2x}$ & $\overline{2+ 3x}$ & $\overline{0+ 2x}$ & $\overline{2+ 3x}$ & $\overline{0+ 0x}$ & $\overline{2+ 1x}$ & $\overline{0+ 0x}$ & $\overline{2+ 1x}$ & $\overline{0+ 2x}$ & $\overline{2+ 3x}$ & $\overline{0+ 2x}$ & $\overline{2+ 3x}$ & $\overline{0+ 0x}$ & $\overline{2+ 1x}$ \\ \hline 
+            $\overline{3+ 1x}$ &$\overline{0+ 0x}$ & $\overline{3+ 1x}$ & $\overline{2+ 2x}$ & $\overline{1+ 3x}$ & $\overline{0+ 3x}$ & $\overline{3+ 0x}$ & $\overline{2+ 1x}$ & $\overline{1+ 2x}$ & $\overline{0+ 2x}$ & $\overline{3+ 3x}$ & $\overline{2+ 0x}$ & $\overline{1+ 1x}$ & $\overline{0+ 1x}$ & $\overline{3+ 2x}$ & $\overline{2+ 3x}$ & $\overline{1+ 0x}$ \\ \hline 
+            $\overline{0+ 2x}$ &$\overline{0+ 0x}$ & $\overline{0+ 2x}$ & $\overline{0+ 0x}$ & $\overline{0+ 2x}$ & $\overline{0+ 0x}$ & $\overline{0+ 2x}$ & $\overline{0+ 0x}$ & $\overline{0+ 2x}$ & $\overline{0+ 0x}$ & $\overline{0+ 2x}$ & $\overline{0+ 0x}$ & $\overline{0+ 2x}$ & $\overline{0+ 0x}$ & $\overline{0+ 2x}$ & $\overline{0+ 0x}$ & $\overline{0+ 2x}$ \\ \hline 
+            $\overline{1+ 2x}$ &$\overline{0+ 0x}$ & $\overline{1+ 2x}$ & $\overline{2+ 0x}$ & $\overline{3+ 2x}$ & $\overline{0+ 1x}$ & $\overline{1+ 3x}$ & $\overline{2+ 1x}$ & $\overline{3+ 3x}$ & $\overline{0+ 2x}$ & $\overline{1+ 0x}$ & $\overline{2+ 2x}$ & $\overline{3+ 0x}$ & $\overline{0+ 3x}$ & $\overline{1+ 1x}$ & $\overline{2+ 3x}$ & $\overline{3+ 1x}$ \\ \hline 
+            $\overline{2+ 2x}$ &$\overline{0+ 0x}$ & $\overline{2+ 2x}$ & $\overline{0+ 0x}$ & $\overline{2+ 2x}$ & $\overline{0+ 2x}$ & $\overline{2+ 0x}$ & $\overline{0+ 2x}$ & $\overline{2+ 0x}$ & $\overline{0+ 0x}$ & $\overline{2+ 2x}$ & $\overline{0+ 0x}$ & $\overline{2+ 2x}$ & $\overline{0+ 2x}$ & $\overline{2+ 0x}$ & $\overline{0+ 2x}$ & $\overline{2+ 0x}$ \\ \hline 
+            $\overline{3+ 2x}$ &$\overline{0+ 0x}$ & $\overline{3+ 2x}$ & $\overline{2+ 0x}$ & $\overline{1+ 2x}$ & $\overline{0+ 3x}$ & $\overline{3+ 1x}$ & $\overline{2+ 3x}$ & $\overline{1+ 1x}$ & $\overline{0+ 2x}$ & $\overline{3+ 0x}$ & $\overline{2+ 2x}$ & $\overline{1+ 0x}$ & $\overline{0+ 1x}$ & $\overline{3+ 3x}$ & $\overline{2+ 1x}$ & $\overline{1+ 3x}$ \\ \hline 
+            $\overline{0+ 3x}$ &$\overline{0+ 0x}$ & $\overline{0+ 3x}$ & $\overline{0+ 2x}$ & $\overline{0+ 1x}$ & $\overline{0+ 0x}$ & $\overline{0+ 3x}$ & $\overline{0+ 2x}$ & $\overline{0+ 1x}$ & $\overline{0+ 0x}$ & $\overline{0+ 3x}$ & $\overline{0+ 2x}$ & $\overline{0+ 1x}$ & $\overline{0+ 0x}$ & $\overline{0+ 3x}$ & $\overline{0+ 2x}$ & $\overline{0+ 1x}$ \\ \hline 
+            $\overline{1+ 3x}$ &$\overline{0+ 0x}$ & $\overline{1+ 3x}$ & $\overline{2+ 2x}$ & $\overline{3+ 1x}$ & $\overline{0+ 1x}$ & $\overline{1+ 0x}$ & $\overline{2+ 3x}$ & $\overline{3+ 2x}$ & $\overline{0+ 2x}$ & $\overline{1+ 1x}$ & $\overline{2+ 0x}$ & $\overline{3+ 3x}$ & $\overline{0+ 3x}$ & $\overline{1+ 2x}$ & $\overline{2+ 1x}$ & $\overline{3+ 0x}$ \\ \hline 
+            $\overline{2+ 3x}$ &$\overline{0+ 0x}$ & $\overline{2+ 3x}$ & $\overline{0+ 2x}$ & $\overline{2+ 1x}$ & $\overline{0+ 2x}$ & $\overline{2+ 1x}$ & $\overline{0+ 0x}$ & $\overline{2+ 3x}$ & $\overline{0+ 0x}$ & $\overline{2+ 3x}$ & $\overline{0+ 2x}$ & $\overline{2+ 1x}$ & $\overline{0+ 2x}$ & $\overline{2+ 1x}$ & $\overline{0+ 0x}$ & $\overline{2+ 3x}$ \\ \hline 
+            $\overline{3+ 3x}$ &$\overline{0+ 0x}$ & $\overline{3+ 3x}$ & $\overline{2+ 2x}$ & $\overline{1+ 1x}$ & $\overline{0+ 3x}$ & $\overline{3+ 2x}$ & $\overline{2+ 1x}$ & $\overline{1+ 0x}$ & $\overline{0+ 2x}$ & $\overline{3+ 1x}$ & $\overline{2+ 0x}$ & $\overline{1+ 3x}$ & $\overline{0+ 1x}$ & $\overline{3+ 0x}$ & $\overline{2+ 3x}$ & $\overline{1+ 2x}$ \\ \hline 
+            \end{tabular}
+    \end{table}
+    
+\end{document}

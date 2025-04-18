@@ -1,0 +1,133 @@
+\documentclass{article}
+
+
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage[letterpaper, top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+
+%common set symbols 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\nullset}{\varnothing}
+\newcommand{\powerset}[1]{\mathcal{P} ({#1})}
+\newcommand{\ol}[1]{\overline{#1}}
+
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+
+\newcommand{\st}{\text{ such that }}
+\newcommand{\pmi}{\text{ principle of mathematical induction }}
+
+\newcommand{\nitem}[1] % sets enumerate to a specific number {arg1}
+{
+	\setcounter{enumi}{#1}
+	\addtocounter{enumi}{-1}
+	\item
+}
+\usepackage{multicol}
+
+\title{MATH 405: Exam 2 }
+\author{Micah Sherry}
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		\item Consider $R = \Z_4[x]$ And the Ideal $J= \langle x^2 \rangle$ Now consider the quotient ring $\Z_4[x] / \langle x2 \rangle$.
+		\begin{enumerate}
+			\item Explain how many elements are in $\Z_4[x] / \langle x2 \rangle$.\\
+			$\Z_4[x] / \langle x2 \rangle = \{a+bx+\langle x^2\rangle| a,b \in \Z_4\}$ Since $\Z_4$ has 4 elements, $\Z_4[x] / \langle x2 \rangle$ has $16$ ($4$ choices for each $a$ and $b$)  
+			\item  give the multiplication table for $\Z_4[x] / \langle x2 \rangle$\\
+				See last page.  
+			
+			\item  indicate for each element of $\Z_4[x] / \langle x2 \rangle$ if it is a unit, zero divisor or neither 
+			\begin{table}[h!] 
+				\centering
+				\begin{tabular}{|c|l|}
+					\hline
+					0+ 0x & None \\	\hline
+					1+ 0x & unit \\	\hline
+					2+ 0x & zero divisor \\	\hline
+					3+ 0x & unit \\	\hline
+					0+ 1x & zero divisor \\	\hline
+					1+ 1x & unit \\	\hline
+					2+ 1x & zero divisor \\	\hline
+					3+ 1x & unit \\	\hline
+					0+ 2x & zero divisor \\	\hline
+					1+ 2x & unit \\	\hline
+					2+ 2x & zero divisor \\	\hline
+					3+ 2x & unit \\	\hline
+					0+ 3x & zero divisor \\	\hline
+					1+ 3x & unit \\	\hline
+					2+ 3x & zero divisor \\	\hline
+					3+ 3x & unit \\	\hline
+				\end{tabular}
+			\end{table}
+		\end{enumerate}
+
+		\item Recall we have shown that for $R=\R[x]$ every ideal is principal.
+		That is if $J$ is an ideal of $\R[x]$, then $J = \langle g(x) \rangle = \{ f(x)g(x) | f(x) \in \R[x]\}$ for some polynomial g(x).
+		$$\text{ Let } J = \langle 2x^2+3x+1, 10x^2+x-2 \rangle = \{ ( 2x^2+3x+1)f(x) + (10x^2+x-2)g(x)|f(x),g(x) \in \R[x] \}. $$
+		Now $J$ is a principal ideal so every element of $J$ is expressible as a factor of one polynomial, find a $h(x)$ such that $J = \langle h(x)\rangle$
+		
+		$h(x)$ can be found by using the Euclidean algorithm algorithm for polynomial over $\R[x]$ 
+		\begin{align*}
+			10x^2 + x - 2 &= 5(2x^2 + 3x + 1) -14x - 7\\
+			2x^2 + 3x + 1 &= (-\frac{1}{7}x - \frac{1}{7})(-14x - 7) + 0
+		\end{align*}
+		Therefore the gcd of $2x^2+3x+1$ and $10x^2+x-2$ is $-14x - 7$. Thus, $J = \langle -14x - 7\rangle$   
+		
+		\pagebreak
+		\item Let $R$ be a commutative ring and $J$ be an ideal of $R$. Define the relationship congruence $\mod J$ on $R$ as follows:
+		For $r, s \in R$, $r \equiv_J s$ if and only if $r - s \in J$.
+		Show that the relation congruence $\mod J$ is an equivalence relation
+		\begin{proof}
+			Let $x \in R$, Notice $x-x = O_R$ which is an element of J. Therefore equivalence $\mod J$ is reflexive.\\
+			
+			Let $x, y \in R$ with $x \equiv_J y$. So, $x-y = j$ for some $j \in J$. Notice $y-x =-1(j) \in J$ (by absorption property of $J$). 
+			Therefore equivalence $\mod J$ is symmetric.\\  
+			
+			let $x, y, z \in R$ with $x \equiv_J y$ and $y \equiv_J z$. $x-y \in  J$ and  $y-z \in J$ now consider $(x-y) + (y-z) = x-z \in  J$ (by closure of $J$ under addition).
+			Therefore equivalence $\mod J$ is transitive.\\
+			Since equivalence $\mod J$ is reflexive, symmetric, and transitive it is an equivalence relation
+
+		\end{proof}
+	
+		\item Recall we have shown that for $R = \Z$ every ideal is principal. 
+		That is if $J$ is an ideal of $\Z$, then $J = \langle k\rangle = \{ kn | n \in \Z \}$ for some positive integer $k$.
+		Define an ideal $M$ of a commutative ring R to be maximal if $M \neq R$ and if $J$ is an ideal with $M \subseteq J \subseteq R$, then either $J = M$ or $J = R$.
+		Prove an ideal $M$ of $\Z$ is maximal if and only if $M = \langle p\rangle$ for some prime number $p$.
+		\begin{proof}
+			$(\Rightarrow)$ Assume for the sake of contradiction that M = $\langle p \rangle$ Is Maximal and p is not prime. 
+			So, $p = p_1p_2$ for some $p_1, p_2 >1 \in \Z$.
+			Let $x \in \langle p \rangle$, So $x = pn = p_1(p_2n)$ for some $n \in \Z$. 
+			Notice $p_2n \in \Z$, So $x \in \langle p_1 \rangle$, which implies $\langle p \rangle \subseteq \langle p_1 \rangle \subseteq \Z$.
+			Since $\langle p_1 \rangle \neq \langle p \rangle$ and $\langle p_1 \rangle \neq \Z$, $\langle p \rangle$ is Not a maximal ideal contradicting the assumption.
+			So if ideal $M = \langle p\rangle$ of $\Z$ is maximal then $p$ is a prime number. \\
+
+			$(\Leftarrow)$ let $p$ be a prime number and let $j \in \Z$ such that $\langle p \rangle \subseteq \langle j \rangle \subseteq \Z$.
+			Notice $p \in \langle p \rangle$ and $p \in \langle j \rangle$. So, $p = jk$ for some $k \in \Z$, which implies that $j|p$ and since $p$ is prime $j = 1$ or $j=p$.\\
+			if $j=1$ then $\langle j \rangle = \Z$ and if $j=p$ then $\langle j \rangle = \langle p \rangle$. \\
+			So, if p is prime then $\langle p \rangle$ is maximal. This completes the proof. 
+		\end{proof}
+
+		\item Let G be a group (not necessarily commutative).
+		Recall the center of the group is $Z(G) = \{g \in G | g \circ h = h \circ g \text{ for all } h \in G\}$.
+		Prove that a group $G$ is commutative if and only if $Z(G) = G$.
+		\begin{proof}
+			$(\Rightarrow)$ Let G be a commutative group, let $g, h \in G$, Since $G$ is commutative $g \circ h = h \circ g$ so, $g \in Z(G)$. Thus $Z(G)=G$.
+
+			$(\Leftarrow)$ Let $Z(G)=G$ and let $g \in G$. Since $g \in Z(G)$, $g \circ h = h \circ g$ for all $h\in G$, Therefore G is commutative. This completes the proof.
+		\end{proof}
+	\end{enumerate}
+\end{document}
