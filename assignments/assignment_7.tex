@@ -44,36 +44,37 @@
 \begin{document}
 	\maketitle
 	\begin{enumerate}
-		\item if G is a commutative Group Then $H =\{\alpha \in G |\alpha = g^2 \text{ for some } g \in G\}$ is a Subgroup of G.
+		\item If G is a commutative Group Then $H =\{\alpha \in G |\alpha = g^2 \text{ for some } g \in G\}$ is a Subgroup of G.
 		\begin{proof}
-			let $G$ be a commutative Group and let $H =\{\alpha \in G |\alpha = g^2 \text{ for some } g \in G\}$.
+			Let $G$ be a commutative Group and let $H =\{\alpha \in G |\alpha = g^2 \text{ for some } g \in G\}$.
 			\\
-			Notice $e = e^2 \in H$. So, $H \neq \nullset$.\\ let $x^2, y^2 \in H$
+			Notice $e = e^2 \in H$. So, $H \neq \nullset$.
+			\\ let $x^2, y^2 \in H$. Consider,
 			\begin{align*}
 				x^2y^2  &= xxyy\\
 						&= xyxy &\text{(By commutativity of G)}\\
 						&= (xy)^2
 			\end{align*}
-			So, $(xy)^2 \in H$ thus $H$ is closed under the operation of the group.\\
-			let $g^2 \in H$ and let $(g^{-1})^2 \in H$ where $g^{-1}$ is the inverse of g.  
+			Since,$xy \in G$, $(xy)^2 \in H$ thus $H$ is closed under the operation of the group.\\
+			Let $g^2 \in H$. Notice $(g^{-1})^2 \in H$ because $g^{-1} \in G$.  
 			Consider,
 			\begin{align*}
 				(g^{-1})^2g^2   &= g^{-1}g^{-1}gg \\
 								&= e  &\text{(By definition of inverses)} 
 			\end{align*}
-			Therefore $(g^{-1})^2$ is the inverse of $g^2$. So H contains inverses for each element of H. Thus G is a Subgroup. 
+			Therefore $(g^{-1})^2$ is the inverse of $g^2$. So H contains inverses for each element of H. Thus H is a Subgroup of G. 
 		\end{proof}
 
 		\item let H and K be Subgroup of a commutative group G. Define $HK = \{hk| h \in H \text{ and } k \in G\}$
 		\begin{proof}
-			Notice $e \in H $ and $e \in K$ therefore $e^2 = e \in HK$. So $HK \neq \nullset$.
+			Notice $e \in H $ and $e \in K$ therefore $e^2 = e \in HK$. So $HK \neq \nullset$. \\
 			let $h_1, h_2 \in H$ and $k_1, k_2 \in K$. 
 			Consider,
 			\begin{align*}
-				(h_1k_1)(h_2k_2)&=(h_1k_1)(h_2k_2)\\
+				(h_1k_1)(h_2k_2)&=h_1k_1h_2k_2\\
 								&= (h_1h_2)(k_1k_2) &\text{(by commutativity of G)}\\			
 			\end{align*}
-			Notice $(h_1h_2)\in H $ and $ (k_1k_2)$ So, $(h_1h_2)(k_1k_2) \in HK$.
+			Notice $(h_1h_2)\in H $ and $ (k_1k_2)$ So, $(h_1h_2)(k_1k_2) \in HK$.\\
 			Let $h \in H$ and $k \in K$, notice $h^{-1}k^{-1} \in HK$ Consider,
 			\begin{align*}
 				(h^{-1}k^{-1})(hk) &= h^{-1}k^{-1}hk\\
@@ -97,7 +98,7 @@
 				19 & 2 \\ \hline  
 			\end{tabular}
 		\end{center}
-		\item Let $G$ be a group and $g \in G$ be an element with finite ord prove each of the following statements: 
+		\item Let $G$ be a group and $g \in G$ be an element with finite order prove each of the following statements: 
 		\begin{enumerate}
 			\item $ord(g^{-1})$ is finite. proof of this follows from proof of part b
 			\item $ord(g^{-1}) = ord(g)$ 
@@ -108,7 +109,7 @@
 					(g^n)^{-1} &= e^{-1} \\
 					(g^{-1})^n &= e &\text{(by properties of exponents and since e is self inverse)}\\
 				\end{align*}
-				Assume for the sake of contradiction that there exist $r in \N$ such that $0 < r < n$ such that $(g^{-1})^r = e$.
+				Assume for the sake of contradiction that there exist $r \in \N$ such that $0 < r < n$ such that $(g^{-1})^r = e$.
 				So, 
 				\begin{align*}
 					(g^{-1})^r &= e\\
@@ -120,12 +121,12 @@
 		\end{enumerate}
 		\item let $a$ and $b$ be elements of a commutative Group g. If the $ord(a)$ and $ord(b)$ are finite then ord(ab) is finite.
 		\begin{proof}
-			let $a,b \in G$ with $ord(a) = m$ and $ord(b) = n$
-			Notice $a^m = (a^{m})^n =a^{mn}= e^n = e$ and $b^n =(a^{m})^n = b^{nm} = e^m = e$.
+			let $a,b \in G$ with $ord(a) = m$ and $ord(b) = n$.
+			Notice $$a^m = (a^{m})^n =a^{mn}= e^n = e$$ And Similarly $$b^n =(b^{n})^m = b^{nm} = e^m = e$$
 			Now Consider,
 			\begin{align*}
-				e 	&= a^{nm}b^{nm}\\
-					&= (ab)^{nm} &\text{(since G is commutative)}
+				a^{nm}b^{nm} &= e &\text{(since } a^{nm}=b^{nm}=e \text{)}\\
+				(ab)^{nm} &= e  &\text{(since G is commutative)}
 			\end{align*}
 			Therefore the $0 < ord(ab) <mn$, which is finite. 
 		\end{proof} 
